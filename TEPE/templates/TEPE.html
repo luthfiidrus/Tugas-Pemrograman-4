@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'gaya.css' %}">
+    <title>Tugas Pemrograman 4</title>
+</head>
+<body class="background">
+    <div class="kumen">
+        <img src="https://media.wired.com/photos/5932639bedfced5820d10022/master/w_1025,c_limit/steve-jobs.jpg" class="gambar">
+        <h3 style="padding-top:30px;padding-left:15px;">
+            Nama saya adalah Muhammad Luthfi Idrus. Saya lahir pada tanggal 16 Desember 2000. Saya adalah seorang Programmer
+            yang masih Newbie. Pada awal masuk Fasilkom UI, saya tidak percaya dengan diri saya sendiri apakah saya akan survive
+            di Fasilkom. Tapi nyatanya, ngoding itu mengasyikkan walaupun memusingkan. Ini adalah salah satu karya yang sudah
+            saya buat.
+        </h3>
+    </div>
+     
+        <h1 class="judul">Silahkan Memberikan Suatu Komentar :)</h1>
+        <form action="" method="POST"> <!-- POST itu sekalian ngerubah sekalian nampilin -->
+            {% csrf_token %}
+            
+            <!--input field untuk nama penulis-->
+            <h3 class="posisi">By Who:</h3>
+            <div>
+                <p class="posisi"><textarea type="text" name="penulis" class="field" rows="1"></textarea></p> <!-- input fieldnya -->
+            </div>
+            <!--input field untuk nama penulis-->
+
+            <!--untuk comment yang akan di submit-->
+            <h3 class="posisi">Comment:</h3>
+            <div>
+                <p class="posisi"><textarea type="text" name="komentar" class="field" rows="20"></textarea></p> <!-- input fieldnya -->
+            </div>
+            <!--untuk comment yang akan di submit-->
+
+            <div>
+                <p class="posisi"><button type="submit" class="buton">Submit</button></p>
+            </div>
+        </form>
+        <h2>Recent Comments:</h2>
+        <div>
+            {% for comment in comments %}
+            <div class="kumen">
+            <div> 
+                <img src="https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1-744x744.jpg" height="50vw">
+            </div>
+            <div>
+                <p style="font-size:20px; padding-left: 30px;"> {{ comment.komen }} by {{ comment.penulis }}</p>
+            </div>
+            </div>
+            {% endfor %}
+        </div>
+</body>
+</html>

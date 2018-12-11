@@ -1,0 +1,30 @@
+.background{
+    background-image: url(Atlas.jpg);
+}
+
+.judul{
+    text-align: center;
+}
+
+.field{
+    width: 50%;
+}
+
+.posisi{
+    text-align: center;
+}
+
+.buton{
+    font-size: 30px;
+}
+
+.kumen{
+    display: flex;
+    flex-direction: row;
+}
+
+.gambar{
+    width: 35%;
+    height: 50%;
+    border-radius: 50%;
+}
